@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Info, Star, Layers, Activity, CheckCircle2, Code2, Workflow, BookOpen, History } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { projects } from '../data/projects';
 import { Button } from '../components/ui/Button';
@@ -73,6 +73,11 @@ export function ProjectCaseStudy() {
                     {project.projectType}
                   </Badge>
                 )}
+                {project.year && (
+                  <Badge variant="outline" className="text-sm font-semibold tracking-wider border-primary/50 text-foreground">
+                    {project.year}
+                  </Badge>
+                )}
                 <Badge variant="secondary">{project.category}</Badge>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">{project.title}</h1>
@@ -90,50 +95,134 @@ export function ProjectCaseStudy() {
               )}
             </header>
 
-            <div className="prose prose-lg dark:prose-invert max-w-none">
+            <div className="space-y-16 mt-16">
               
-              <section className="mb-10">
-                <h2>Overview</h2>
-                <p>{caseStudy.overview}</p>
+              {/* Overview */}
+              <section className="bg-card border rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+                  <span className="bg-primary/10 text-primary p-2 rounded-xl"><Info className="w-6 h-6" /></span>
+                  Overview
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed relative z-10">
+                  {caseStudy.overview}
+                </p>
               </section>
 
+              {/* Key Features */}
+              {caseStudy.keyFeatures && caseStudy.keyFeatures.length > 0 && (
+                <section>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span className="bg-primary/10 text-primary p-2 rounded-xl"><Star className="w-6 h-6" /></span>
+                    Key Features & Capabilities
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {caseStudy.keyFeatures.map((feature, i) => (
+                      <div key={i} className="bg-card border rounded-2xl p-6 hover:shadow-md transition-all hover:border-primary/50 group">
+                        <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
 
-              <section className="mb-10">
-                <h2>Problem Statement & Motivation</h2>
-                <p><strong>Problem:</strong> {caseStudy.problem}</p>
-                <p><strong>Motivation:</strong> {caseStudy.motivation}</p>
-              </section>
+              {/* Architecture */}
+              {caseStudy.architecture && caseStudy.architecture.length > 0 && (
+                <section>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span className="bg-primary/10 text-primary p-2 rounded-xl"><Layers className="w-6 h-6" /></span>
+                    Architecture & Implementation
+                  </h2>
+                  <div className="relative border-l-2 border-primary/20 ml-4 md:ml-6 space-y-8">
+                    {caseStudy.architecture.map((item, i) => (
+                      <div key={i} className="relative pl-8 md:pl-10">
+                        <div className="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary shadow-sm" />
+                        <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
 
-              <section className="mb-10">
-                <h2>Objectives</h2>
-                <ul>
-                  {caseStudy.objectives.map((obj, i) => (
-                    <li key={i}>{obj}</li>
-                  ))}
-                </ul>
-              </section>
+              {/* Data Flow */}
+              {caseStudy.dataFlow && (
+                <section>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span className="bg-primary/10 text-primary p-2 rounded-xl"><Workflow className="w-6 h-6" /></span>
+                    Real-Time Data Flow
+                  </h2>
+                  <div className="bg-card border rounded-2xl p-6 md:p-8 overflow-x-auto shadow-sm">
+                    <pre className="text-sm md:text-base text-muted-foreground font-mono leading-relaxed whitespace-pre font-semibold text-center">
+                      {caseStudy.dataFlow}
+                    </pre>
+                  </div>
+                </section>
+              )}
 
-              <section className="mb-10">
-                <h2>System Architecture</h2>
-                <p>{caseStudy.architecture}</p>
-              </section>
+              {/* Impact */}
+              {caseStudy.impact && caseStudy.impact.length > 0 && (
+                <section className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background/10 to-transparent"></div>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3 relative z-10">
+                    <span className="bg-primary/20 text-primary p-2 rounded-xl"><Activity className="w-6 h-6" /></span>
+                    Impact & Capabilities
+                  </h2>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 relative z-10">
+                    {caseStudy.impact.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                        <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
 
-              <section className="mb-10">
-                <h2>Implementation</h2>
-                <p>{caseStudy.implementation}</p>
-              </section>
+              {/* Tech Stack */}
+              {caseStudy.techStack && caseStudy.techStack.length > 0 && (
+                <section>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span className="bg-primary/10 text-primary p-2 rounded-xl"><Code2 className="w-6 h-6" /></span>
+                    Technology Stack
+                  </h2>
+                  <div className="flex flex-wrap gap-4">
+                    {caseStudy.techStack.map((item, i) => (
+                      <div key={i} className="flex flex-col bg-card border rounded-2xl p-5 flex-1 min-w-[200px] hover:border-primary/50 transition-colors">
+                        <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">{item.category}</span>
+                        <span className="text-lg font-semibold">{item.technologies}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
 
-              <section className="mb-10">
-                <h2>My Contribution & Challenges</h2>
-                <p><strong>Contribution:</strong> {caseStudy.contribution}</p>
-                <p><strong>Challenges:</strong> {caseStudy.challenges}</p>
-              </section>
+              {/* Research Foundation */}
+              {caseStudy.researchFoundation && (
+                <section className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 relative overflow-hidden mt-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 relative z-10">
+                    <span className="bg-primary/20 text-primary p-2 rounded-xl"><BookOpen className="w-6 h-6" /></span>
+                    Model & Research Foundation
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed relative z-10">
+                    {caseStudy.researchFoundation}
+                  </p>
+                </section>
+              )}
 
-              <section className="mb-10">
-                <h2>Results & Future Improvements</h2>
-                <p><strong>Results:</strong> {caseStudy.results}</p>
-                <p><strong>Future Improvements:</strong> {caseStudy.futureImprovements}</p>
-              </section>
+              {/* Background */}
+              {caseStudy.background && (
+                <section className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 relative overflow-hidden mt-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 relative z-10">
+                    <span className="bg-primary/20 text-primary p-2 rounded-xl"><History className="w-6 h-6" /></span>
+                    Project Background
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed relative z-10">
+                    {caseStudy.background}
+                  </p>
+                </section>
+              )}
 
             </div>
 

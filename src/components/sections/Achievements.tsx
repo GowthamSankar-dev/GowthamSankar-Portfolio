@@ -1,4 +1,4 @@
-import { Award, CheckCircle2 } from 'lucide-react';
+import { Award, CheckCircle2, ExternalLink } from 'lucide-react';
 import { Section } from '../ui/Section';
 import { Card, CardContent } from '../ui/Card';
 import { achievements } from '../../data/achievements';
@@ -35,9 +35,10 @@ export function Achievements() {
                               href={cert.verificationLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-primary hover:underline font-medium"
+                              className="text-primary hover:underline font-medium inline-flex items-center gap-1"
                             >
-                              Verify Credential
+                              <ExternalLink className="w-3 h-3" />
+                              Certificate
                             </a>
                           )}
                         </div>
@@ -68,6 +69,19 @@ export function Achievements() {
                       </div>
                       <p className="text-sm text-muted-foreground mb-2">{achieve.date}</p>
                       <p className="text-sm text-foreground/90">{achieve.description}</p>
+                      {achieve.verificationLink && (
+                        <div className="mt-3 flex flex-wrap gap-3 text-xs">
+                          <a
+                            href={achieve.verificationLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            Certificate
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

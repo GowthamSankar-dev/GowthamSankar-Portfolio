@@ -5,22 +5,36 @@ export interface Experience {
   duration: string;
   responsibilities: string[];
   technologies: string[];
-  achievements: string[];
+  achievements?: string[];
+  proof?: string;
+  proofUrl?: string;
 }
 
 export const experiences: Experience[] = [
   {
     id: 'exp-1',
-    organization: '[PLACEHOLDER_ORGANIZATION_NAME]',
-    role: '[PLACEHOLDER_ROLE_TITLE]',
-    duration: '[PLACEHOLDER_START_DATE] - [PLACEHOLDER_END_DATE]',
+    organization: 'NLC India Limited',
+    role: 'Data Analyst Intern',
+    duration: 'JAN 2024',
     responsibilities: [
-      '[PLACEHOLDER_RESPONSIBILITY_1]',
-      '[PLACEHOLDER_RESPONSIBILITY_2]'
+      'Analyzed and processed data to identify patterns, insights, and trends.',
+      'Worked with data analysis and visualization to support practical decision-making.'
     ],
-    technologies: ['[PLACEHOLDER_TECH_1]', '[PLACEHOLDER_TECH_2]'],
-    achievements: [
-      '[PLACEHOLDER_ACHIEVEMENT_1]'
-    ]
+    technologies: ['Python', 'Data Analysis', 'Data Visualization'],
+    proof: 'Internship Certificate',
+    proofUrl: 'https://drive.google.com/file/d/1J4pMS1AUWziLQgQGrIxkrhDP-7dk21pg/view?usp=sharing'
+  },
+  {
+    id: 'exp-2',
+    organization: 'MSME-Funded Project',
+    role: 'Front-End Developer',
+    duration: 'AUG 2025 - SEP 2025',
+    responsibilities: [
+      'Designed and developed responsive front-end interfaces for the project.',
+      'Implemented user-focused web components and integrated them into the project workflow.'
+    ],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Git', 'GitHub'],
+    proof: 'Project Git Repository',
+    proofUrl: 'https://github.com/DocToYou/doctoyou'
   }
 ];

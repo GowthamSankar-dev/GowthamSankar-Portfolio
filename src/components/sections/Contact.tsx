@@ -13,7 +13,7 @@ export function Contact() {
           <div>
             <h2 className="text-3xl font-bold tracking-tight mb-4">Get In Touch</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              I'm currently looking for new opportunities, research collaborations, and open to discussing Master's programs in Germany. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              I’m always open to new opportunities, research collaborations, and interesting projects. Whether you have a question, want to discuss an idea, or simply want to connect, feel free to reach out. I’ll be happy to get in touch.
             </p>
           </div>
 

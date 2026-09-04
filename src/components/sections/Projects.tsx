@@ -24,6 +24,11 @@ export function Projects() {
                         {project.projectType}
                       </Badge>
                     )}
+                    {project.year && (
+                      <Badge variant="outline" className="text-xs font-semibold tracking-wider border-primary/50 text-foreground">
+                        {project.year}
+                      </Badge>
+                    )}
                     <Badge variant="secondary">
                       {project.category}
                     </Badge>

@@ -38,7 +38,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <a href="#" className="text-xl font-bold tracking-tighter">
-              {aboutData.name.split(' ')[0]}<span className="text-primary">.</span>
+              {aboutData.name}
             </a>
           </div>
           

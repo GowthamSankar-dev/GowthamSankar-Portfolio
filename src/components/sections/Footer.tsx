@@ -5,10 +5,7 @@ export function Footer() {
   
   return (
     <footer className="bg-background py-8 border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-muted-foreground">
-          &copy; {year} {aboutData.name}. All rights reserved.
-        </p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center gap-4">
         <p className="text-sm text-muted-foreground/60">
           Last updated: {aboutData.lastUpdated}
         </p>

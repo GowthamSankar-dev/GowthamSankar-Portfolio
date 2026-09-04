@@ -2,6 +2,7 @@ import { Section } from '../ui/Section';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { experiences } from '../../data/experience';
+import { Award } from 'lucide-react';
 
 export function Experience() {
   return (
@@ -59,6 +60,19 @@ export function Experience() {
                             </Badge>
                           ))}
                         </div>
+                      </div>
+                    )}
+                    
+                    {exp.proof && (
+                      <div className="pt-3 border-t mt-4 flex items-center gap-2 text-sm font-medium">
+                        <Award className="w-4 h-4 text-primary" />
+                        {exp.proofUrl ? (
+                          <a href={exp.proofUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline hover:text-primary/80 transition-colors inline-flex items-center gap-1">
+                            {exp.proof}
+                          </a>
+                        ) : (
+                          <span className="text-primary">{exp.proof}</span>
+                        )}
                       </div>
                     )}
                   </div>

@@ -6,22 +6,22 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     name: 'Programming',
-    skills: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS']
+    skills: ['Python', 'JavaScript', 'HTML', 'CSS']
   },
   {
     name: 'AI / Machine Learning',
-    skills: ['Machine Learning', 'Deep Learning', 'LLMs', 'Computer Vision', 'OCR']
+    skills: ['Machine Learning', 'Deep Learning', 'LLMs', 'Computer Vision', 'OCR','NLP']
   },
   {
     name: 'Frameworks',
-    skills: ['Flask', 'React', 'Tailwind CSS']
+    skills: ['Flask','Django','FastAPI', 'React', 'Tailwind CSS','PyTorch ','OpenCV']
   },
   {
     name: 'Tools & Technologies',
-    skills: ['Git', 'GitHub', 'Docker', 'Ollama', 'Odoo']
+    skills: ['Git', 'GitHub', 'Docker', 'Ollama', 'Odoo','Power BI']
   },
   {
     name: 'Databases',
-    skills: ['[PLACEHOLDER_DB_1]', '[PLACEHOLDER_DB_2]']
+    skills: ['SQLite' ,'PostgreSQL']
   }
 ];
