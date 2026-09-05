@@ -98,8 +98,10 @@ export const projects: Project[] = [
     demo: 'https://showmyfleet.vercel.app/',
     image: '/assets/image.png',
     screenshots: [
-      '/assets/screenshot1.png',
-      '/assets/screenshot2.png'
+      '/assets/ishowfleet (1).png',
+      '/assets/ishowfleet (2).png',
+      '/assets/ishowfleet (3).png',
+      '/assets/ishowfleet (4).png'
     ],
     caseStudy: {
       overview: 'Fleet Tracking System is a real-time vehicle tracking backend designed to receive, store, retrieve, and broadcast vehicle location data. It provides APIs for receiving GPS coordinates from mobile devices, managing tracked vehicles, accessing their latest locations and historical tracking data, and delivering live location updates to connected monitoring dashboards through WebSockets. The backend is structured using a modular service-based architecture, making it suitable for building scalable real-time fleet monitoring applications.',

@@ -5,7 +5,7 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Programming',
+    name: 'Programming & Web',
     skills: ['Python', 'JavaScript', 'HTML', 'CSS']
   },
   {
@@ -13,8 +13,8 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Machine Learning', 'Deep Learning', 'LLMs', 'Computer Vision', 'OCR','NLP']
   },
   {
-    name: 'Frameworks',
-    skills: ['Flask','Django','FastAPI', 'React', 'Tailwind CSS','PyTorch ','OpenCV']
+    name: 'Frameworks & Libraries',
+    skills: ['Flask','Django','FastAPI', 'React', 'Tailwind CSS','PyTorch','OpenCV']
   },
   {
     name: 'Tools & Technologies',

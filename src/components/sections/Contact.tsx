@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Section } from '../ui/Section';
 import { Button } from '../ui/Button';
@@ -35,10 +35,6 @@ export function Contact() {
               <Mail className="h-5 w-5" />
               <span>{contactData.email}</span>
             </a>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="h-5 w-5" />
-              <span>{contactData.location}</span>
-            </div>
           </div>
           
           <div className="flex justify-center gap-6 pt-4 border-t mt-12 w-32 mx-auto">

@@ -52,9 +52,9 @@ export function Hero() {
           </div>
         </div>
         
-        {/* Optional decorative element or image space */}
-        <div className="flex-1 hidden lg:flex justify-end">
-          <div className="relative w-72 h-72 xl:w-96 xl:h-96 rounded-full bg-gradient-to-tr from-primary/20 to-secondary border border-border shadow-2xl flex items-center justify-center overflow-hidden backdrop-blur-3xl">
+        {/* Profile Image Space */}
+        <div className="flex-1 flex justify-center lg:justify-end order-first md:order-last mb-8 md:mb-0">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 xl:w-96 xl:h-96 rounded-full bg-gradient-to-tr from-primary/20 to-secondary border border-border shadow-2xl flex items-center justify-center overflow-hidden backdrop-blur-3xl">
             <img src="/Profile.jpeg" alt="Profile" className="w-full h-full object-cover" />
           </div>
         </div>

@@ -43,7 +43,7 @@ export function Navbar() {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden lg:flex space-x-8 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -55,7 +55,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
             <Button asChild variant="outline" size="sm" className="gap-2">
               <a href={aboutData.resumeUrl} download>
@@ -65,7 +65,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-4">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -79,7 +79,7 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="lg:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <a

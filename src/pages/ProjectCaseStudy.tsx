@@ -261,8 +261,18 @@ function Carousel({ images, title }: { images: string[], title: string }) {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((img, i) => (
-            <div key={i} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2">
-              <img src={img} alt={`${title} screenshot ${i + 1}`} className="w-full h-full object-contain" />
+            <div key={i} className="relative w-full h-full flex-shrink-0 flex items-center justify-center overflow-hidden">
+              {/* Blurred background to fill the container dimensions */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-xl scale-110 opacity-40 dark:opacity-30" 
+                style={{ backgroundImage: `url(${img})` }}
+              />
+              {/* Uncropped image showing all details */}
+              <img 
+                src={img} 
+                alt={`${title} screenshot ${i + 1}`} 
+                className="relative w-full h-full object-contain p-2 drop-shadow-2xl" 
+              />
             </div>
           ))}
         </div>
